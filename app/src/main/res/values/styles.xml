@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="toggleSwitch" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorControlActivated">@color/colorBlue</item>
+        <item name="colorSwitchThumbNormal">@color/colorBlue</item>
+        <item name="android:colorForeground">@color/colorBlue</item>
+    </style>
+</resources>
