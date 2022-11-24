@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.splitpay.model.DailyRecord
 
-@Database(entities = [DailyRecord::class], version = 1)
+@Database(entities = [DailyRecord::class], version = 2)
 abstract class SplitDatabase : RoomDatabase() {
 
     abstract fun dailyRecordDAO(): DailyRecordDAO
@@ -23,7 +23,7 @@ abstract class SplitDatabase : RoomDatabase() {
                         context.applicationContext,
                         SplitDatabase::class.java,
                         "splitDB"
-                    ).build()
+                    ).fallbackToDestructiveMigration().build()
                 }
             }
             return Instance!!

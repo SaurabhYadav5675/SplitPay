@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/lytSwitch"
@@ -20,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/daily_record"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/text18"
             android:textStyle="bold" />
 
@@ -41,7 +40,7 @@
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/margin10"
             android:text="@string/wallet"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="@dimen/text18"
             android:textStyle="bold" />
     </LinearLayout>
@@ -52,6 +51,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/lytSwitch"
         android:layout_margin="@dimen/margin10"
+        android:divider="@null"
         android:smoothScrollbar="true" />
 
     <ListView
@@ -60,6 +60,8 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/lytSwitch"
         android:layout_margin="@dimen/margin10"
+        android:divider="@null"
+        android:smoothScrollbar="true"
         android:visibility="gone" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

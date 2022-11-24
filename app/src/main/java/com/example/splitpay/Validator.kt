@@ -1,15 +1,23 @@
 package com.example.splitpay
 
+import com.example.splitpay.model.DailyRecord
+import com.example.splitpay.utilities.Utility
+
 object Validator {
     private val emailPattern = Regex("""^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*${'$'}""")
 
-    fun validateInput(amount: Int, description: String): Boolean {
-        return (amount != 0 && description.isNotEmpty());
+    fun validateInput(data: String): Boolean {
+        return (data.isNotEmpty() && data.lowercase() != "null");
     }
 
     fun validEmail(email: String): Boolean {
-        var status = false;
-        status = emailPattern.matches(email)
-        return status
+        return emailPattern.matches(email)
+    }
+
+    fun validDailyRecord(data: DailyRecord): Boolean {
+        return listOf<Boolean>(
+            Utility.checkEmptyString(data.title),
+            Utility.checkEmptyString(data.date)
+        ).all { it }
     }
 }

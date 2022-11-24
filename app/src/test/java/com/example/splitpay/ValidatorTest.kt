@@ -1,5 +1,6 @@
 package com.example.splitpay
 
+import com.example.splitpay.model.DailyRecord
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -10,10 +11,8 @@ class ValidatorTest {
 
     @Test
     fun checkValidInput() {
-        val amount = 10;
-        val des = "yurt"
-
-        val result = Validator.validateInput(amount, des)
+        val data = "testing data"
+        val result = Validator.validateInput(data)
         assertThat(result).isEqualTo(true)
     }
 
@@ -21,6 +20,14 @@ class ValidatorTest {
     fun checkValidEmail() {
         val email = "saurabh@gmail.com"
         val result = Validator.validEmail(email)
+        assertThat(result).isEqualTo(true)
+    }
+
+    @Test
+    fun checkValidDailyRecord() {
+        val dailyData =
+            DailyRecord(1, "Snacks ", "unit testing for daily record", 1, 100, "null1", "", "")
+        val result = Validator.validDailyRecord(dailyData)
         assertThat(result).isEqualTo(true)
     }
 }

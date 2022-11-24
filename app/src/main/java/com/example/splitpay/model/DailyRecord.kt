@@ -9,7 +9,7 @@ data class DailyRecord(
     val id: Int,
     val title: String,
     val description: String,
-    val type: String,
+    val type: Int,
     val amount: Int,
     val date: String,
     val time: String,
